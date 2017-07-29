@@ -43,6 +43,7 @@ function calcProductArray(arr){
   if( n === 0 || n === 1 ){ return []; }
   productArr = [];
   for(var i = 0; i < n - 1; i++){
+    var product = 1;
     for(var j = 0; j < n - 1; j++){
       if( i !== j ){
         product *= arr[j];
