@@ -56,3 +56,38 @@ function flattenDictionary(dict) {
   
   return output;
 }
+
+//=============================
+//Iterative solution
+//==============================
+function flattenDictionary(dict) {
+  var output = {};
+  
+  flattenAlmostPerfect(dict, output, "");
+  
+  return output;
+}
+
+function flattenDictionary(dict) {
+  var output = {};
+  
+  var items = [];
+  items.push( {dic : dict, prefix: ""} );
+  
+  while(items.length > 0){
+    var item = items[0];
+    items.splice(0, 1);
+    
+    for(var key in item.dic){
+      var value = item.dic[key];
+      
+      if( typeof(value) === 'object' ){
+        items.push( {dic: value, prefix: item.prefix + key + "."} );
+      } else {
+        output[item.prefix + key] = value;
+      }
+    }
+  }
+  
+  return output;
+}
