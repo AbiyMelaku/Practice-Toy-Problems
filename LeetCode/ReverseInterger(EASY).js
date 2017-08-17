@@ -37,3 +37,51 @@ var reverse = function(x) {
     
     return isNegative ? result * (-1) : result;
 };
+
+
+/***
+ALTERNATE SOLUTION
+***/
+
+var reverse = function(x){
+  var result = 0;
+  if( x < 0 ) { 
+    x = Math.abs(x); 
+    result = parseInt(x.toString().split('').reverse().join(''));
+    result = result * -1;
+  } else {
+    result = parseInt(x.toString().split('').reverse().join(''));
+  }
+  if( result >= 2147483648 ) {
+    return 0;
+  } else {
+    return result;
+  }
+};
+
+/***
+FAST SOLUTION
+***/
+var reverse = function(x) {
+    
+    var temp = [];
+    var val = Math.abs(x);
+    do {
+        temp.push(val % 10);
+        val = Math.floor(val / 10);
+    } while (val);
+    
+    var result = 0;
+    var len = temp.length;
+    for (var i = 0; i < len; i++) {
+        result += temp[i] * Math.pow(10, len - 1 - i);
+    }
+    if (x < 0) {
+        result = -result;
+    }
+    if (result > 2147483648 || result < -2147483648) {
+        result = 0;
+    }
+    return result;
+    
+};
