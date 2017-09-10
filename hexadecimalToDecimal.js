@@ -28,3 +28,26 @@ function hexToDec (hex) {
   }
    return sum;           
 }
+
+/*
+better code -
+
+function hexToDec (hex) {
+  return hex.split("").reduceRight(function(num, char, index){
+    return num + (singleHexToDec(char) * Math.pow(16, hex.length-1-index))
+  },0);
+  
+}
+
+function singleHexToDec(char){
+  if(isNumeric(char)){
+    return Number(char);
+  }
+  return Number(char.charCodeAt(0)-87);
+}
+
+function isNumeric(num){
+    return !isNaN(num)
+}
+
+*/
