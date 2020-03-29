@@ -4,7 +4,7 @@ function maxDifference (a) {
   for (var i = 0; i < a.length; i++) {
     //IF STATEMENT 1
     //if current value in array is less than the value at left
-    if( a[i] < a[left]) { 
+    if( a[i] < a[left] ) { 
       //then set left to i
       left = i; 
       //now if left is greater than right

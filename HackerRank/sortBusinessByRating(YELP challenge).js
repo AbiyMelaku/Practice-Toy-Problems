@@ -47,3 +47,26 @@ function sortBusinessesByRating(businesses) {
     } while (swapped);
     return businesses;
 }
+
+console.log(sortBusinessesByRating([
+        {'id': 101, rating: 5.0},
+        {'id': 102, rating: 2.0},
+        {'id': 103, rating: 3.0},
+        {'id': 104, rating: 5.0},
+        {'id': 105, rating: 5.0},
+    ]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
